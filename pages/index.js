@@ -11,13 +11,14 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          <a
+            href="http://www.geis-reisen.de"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Geis</a>
+          {' '}Busfahrplan
         </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
       </main>
 
       <footer className={styles.footer}>
