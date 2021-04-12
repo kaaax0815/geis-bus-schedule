@@ -8,12 +8,7 @@ const Footer = () => {
         href="https://kaaaxcreators.de"
         target="_blank"
         rel="noopener noreferrer">
-        Powered by{' '}
-        <img
-          src="https://kaaaxcreators.de/img/sizes/favicon.svg"
-          alt="kaaaxcreators Logo"
-          className={footerStyles.logo}
-        />
+        Impressum{' '}
       </a>
       <a
         className={footerStyles.item}
@@ -32,12 +27,7 @@ const Footer = () => {
         href="https://kaaaxcreators.de"
         target="_blank"
         rel="noopener noreferrer">
-        Powered by{' '}
-        <img
-          src="https://kaaaxcreators.de/img/sizes/favicon.svg"
-          alt="kaaaxcreators Logo"
-          className={footerStyles.logo}
-        />
+        Datenschutzerklärung{' '}
       </a>
     </footer>
   );

@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Footer from '../components/Footer';
 import styles from '../styles/Linien.module.css';
 
-export default function Home({ props, params }) {
-  let counter = 1;
+export default function Linie({ props, params }) {
+  let counter = 0;
   return (
     <div className={styles.container}>
       <Head>
@@ -32,49 +32,63 @@ export default function Home({ props, params }) {
         </h2>
       </main>
 
-      <first id="first">
+      <section id="first">
         <h2 className={styles.description}>
           {props[0].FROM} &rarr; {props[0].TO}
         </h2>
         <div className={styles.div_container}>
           <table className={styles.table}>
-            {props[0].array.map((prop) => (
-              <tr key={counter++} className={styles.tr}>
-                <th className={styles.th}>{prop.bushaltestelle}</th>
-                {prop.zeiten.map((zeit) =>
-                  zeit === 'NULL' ? (
-                    <th className={styles.th}></th>
-                  ) : (
-                    <th className={styles.th}>{zeit}</th>
-                  )
-                )}
-              </tr>
-            ))}
+            <thead></thead>
+            <tbody>
+              {props[0].array.map((prop) => (
+                <tr key={counter++} className={styles.tr}>
+                  <th key={counter++} className={styles.th}>
+                    {prop.bushaltestelle}
+                  </th>
+                  {prop.zeiten.map((zeit) =>
+                    zeit === 'NULL' ? (
+                      <th key={counter++} className={styles.th}></th>
+                    ) : (
+                      <th key={counter++} className={styles.th}>
+                        {zeit}
+                      </th>
+                    )
+                  )}
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
-      </first>
+      </section>
       <br />
-      <second id="second">
+      <section id="second">
         <h2 className={styles.description}>
           {props[1].FROM} &rarr; {props[1].TO}
         </h2>
         <table className={styles.table}>
-          {props[1].array.map((prop) => (
-            <tr key={counter++} className={styles.tr}>
-              <th className={styles.th}>{prop.bushaltestelle}</th>
-              {prop.zeiten.map((zeit) =>
-                zeit === 'NULL' ? (
-                  <th className={styles.th}></th>
-                ) : (
-                  <th className={styles.th}>{zeit}</th>
-                )
-              )}
-            </tr>
-          ))}
+          <thead></thead>
+          <tbody>
+            {props[1].array.map((prop) => (
+              <tr key={counter++} className={styles.tr}>
+                <th key={counter++} className={styles.th}>
+                  {prop.bushaltestelle}
+                </th>
+                {prop.zeiten.map((zeit) =>
+                  zeit === 'NULL' ? (
+                    <th key={counter++} className={styles.th}></th>
+                  ) : (
+                    <th key={counter++} className={styles.th}>
+                      {zeit}
+                    </th>
+                  )
+                )}
+              </tr>
+            ))}
+          </tbody>
         </table>
-      </second>
+      </section>
 
-      <pdf className={styles.properties}>
+      <section className={styles.properties}>
         <p>
           {
             <a
@@ -87,7 +101,7 @@ export default function Home({ props, params }) {
             </a>
           }
         </p>
-      </pdf>
+      </section>
       <Footer />
     </div>
   );
