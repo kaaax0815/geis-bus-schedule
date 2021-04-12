@@ -1,5 +1,7 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -19,18 +21,9 @@ export default function Home() {
             Geis</a>
           {' '}Busfahrplan
         </h1>
+        <Link href="/8304"><a className={styles.description}>8304</a></Link>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://kaaaxcreators.de"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="https://kaaaxcreators.de/img/sizes/favicon.svg" alt="kaaaxcreators Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <Footer />
     </div>
   )
 }

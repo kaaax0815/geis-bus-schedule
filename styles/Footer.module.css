@@ -1,0 +1,26 @@
+.footer {
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid var(--footer-divider);
+    display: flex;
+    justify-content: space-between;
+    align-items: space-evenly;
+}
+
+.item {
+    flex: 1;
+}
+
+.footer img {
+    margin-left: 0.5rem;
+}
+
+.footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 1em;
+}

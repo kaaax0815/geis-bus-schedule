@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Footer from '../components/Footer'
+import Link from 'next/link'
 import styles from '../styles/404.module.css'
 
 export default function Custom404() {
@@ -13,20 +15,13 @@ export default function Custom404() {
           404 - Seite nicht gefunden
         </h1>
         <p className={styles.description}>
-          Gehe <a href="/">zurück</a>
+          Gehe{' '}
+          <Link href="/">
+            <a>zurück</a>
+          </Link>
         </p>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://kaaaxcreators.de"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="https://kaaaxcreators.de/img/sizes/favicon.svg" alt="kaaaxcreators Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <Footer />
     </div>
   )
 }
