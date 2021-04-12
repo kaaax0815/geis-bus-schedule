@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Footer from '../components/Footer'
-import styles from '../styles/Linien.module.css'
+import Head from 'next/head';
+import Link from 'next/link';
+
+import Footer from '../components/Footer';
+import styles from '../styles/Linien.module.css';
 
 export default function Home({ props, params }) {
   let counter = 1;
@@ -13,18 +14,20 @@ export default function Home({ props, params }) {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Linie: {params.linie}
-        </h1>
+        <h1 className={styles.title}>Linie: {params.linie}</h1>
         <h2 className={styles.description}>
           Richtungen:
           <br />
           <Link href="#first" as={params.linie + '#first'}>
-            <a>{props[0].FROM} &rarr; {props[0].TO}</a>
+            <a>
+              {props[0].FROM} &rarr; {props[0].TO}
+            </a>
           </Link>
           <br />
           <Link href="#second" as={params.linie + '#second'}>
-            <a>{props[1].FROM} &rarr; {props[1].TO}</a>
+            <a>
+              {props[1].FROM} &rarr; {props[1].TO}
+            </a>
           </Link>
         </h2>
       </main>
@@ -35,12 +38,18 @@ export default function Home({ props, params }) {
         </h2>
         <div className={styles.div_container}>
           <table className={styles.table}>
-            {props[0].array.map(prop =>
-              <tr className={styles.tr}>
+            {props[0].array.map((prop) => (
+              <tr key={counter++} className={styles.tr}>
                 <th className={styles.th}>{prop.bushaltestelle}</th>
-                {prop.zeiten.map(zeit => zeit === "NULL" ? <th className={styles.th}></th> : <th className={styles.th}>{zeit}</th>)}
+                {prop.zeiten.map((zeit) =>
+                  zeit === 'NULL' ? (
+                    <th className={styles.th}></th>
+                  ) : (
+                    <th className={styles.th}>{zeit}</th>
+                  )
+                )}
               </tr>
-            )}
+            ))}
           </table>
         </div>
       </first>
@@ -50,47 +59,64 @@ export default function Home({ props, params }) {
           {props[1].FROM} &rarr; {props[1].TO}
         </h2>
         <table className={styles.table}>
-          {props[1].array.map(prop =>
-            <tr className={styles.tr}>
+          {props[1].array.map((prop) => (
+            <tr key={counter++} className={styles.tr}>
               <th className={styles.th}>{prop.bushaltestelle}</th>
-              {prop.zeiten.map(zeit => zeit === "NULL" ? <th className={styles.th}></th> : <th className={styles.th}>{zeit}</th>)}
+              {prop.zeiten.map((zeit) =>
+                zeit === 'NULL' ? (
+                  <th className={styles.th}></th>
+                ) : (
+                  <th className={styles.th}>{zeit}</th>
+                )
+              )}
             </tr>
-          )}
+          ))}
         </table>
       </second>
 
       <pdf className={styles.properties}>
-        <p>{
-        <a href={"http://www.lkrhoengrabfeld.rhoen-saale.net/fileServer/LKRG/1000/10118/" + params.linie + ".pdf"}>PDF</a>
-        }</p>
+        <p>
+          {
+            <a
+              href={
+                'http://www.lkrhoengrabfeld.rhoen-saale.net/fileServer/LKRG/1000/10118/' +
+                params.linie +
+                '.pdf'
+              }>
+              PDF
+            </a>
+          }
+        </p>
       </pdf>
       <Footer />
     </div>
-  )
+  );
 }
 
 // Get Json based on Path
 export async function getStaticProps({ params }) {
-  const urls = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4')
-                      .then(urls => urls.json())
-  const filtered = urls.filter(url => url.id === params.linie)
-  const props = await fetch('https://api.npoint.io/' + filtered[0].url)
-                  .then(props => props.json())
+  const urls = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4').then((urls) =>
+    urls.json()
+  );
+  const filtered = urls.filter((url) => url.id === params.linie);
+  const props = await fetch('https://api.npoint.io/' + filtered[0].url).then((props) =>
+    props.json()
+  );
   return {
     props: {
       props,
-      params,
-    },
-  }
+      params
+    }
+  };
 }
 // Specify all Paths because its SSG
 export async function getStaticPaths() {
-  const res = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4')
-  const json = await res.json()
-  const linien = json.map(linie => linie.id)
-  const paths = linien.map(linie => ({params: {linie: linie.toString()}}))
+  const res = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4');
+  const json = await res.json();
+  const linien = json.map((linie) => linie.id);
+  const paths = linien.map((linie) => ({ params: { linie: linie.toString() } }));
   return {
     paths,
-    fallback: false,
-  }
+    fallback: false
+  };
 }

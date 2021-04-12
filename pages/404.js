@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import Footer from '../components/Footer'
-import Link from 'next/link'
-import styles from '../styles/404.module.css'
+import Head from 'next/head';
+import Link from 'next/link';
+
+import Footer from '../components/Footer';
+import styles from '../styles/404.module.css';
 
 export default function Custom404() {
   return (
@@ -11,9 +12,7 @@ export default function Custom404() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          404 - Seite nicht gefunden
-        </h1>
+        <h1 className={styles.title}>404 - Seite nicht gefunden</h1>
         <p className={styles.description}>
           Gehe{' '}
           <Link href="/">
@@ -23,5 +22,5 @@ export default function Custom404() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
