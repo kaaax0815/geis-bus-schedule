@@ -1,8 +1,7 @@
 name: Release CI
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+    repository_dispatch:
+        types: [start-example-workflow]
 jobs:
   lint:
     name: Lint
