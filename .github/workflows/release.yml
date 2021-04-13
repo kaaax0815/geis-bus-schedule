@@ -18,7 +18,7 @@ jobs:
       - name: Cache node modules
         uses: c-hive/gha-yarn-cache@v1
       - name: Install dependencies
-        run: yarn ci
+        run: yarn install --frozen-lockfile
       - name: Run lint command
         run: yarn lint
   test:
@@ -36,7 +36,7 @@ jobs:
       - name: Cache node modules
         uses: c-hive/gha-yarn-cache@v1
       - name: Install dependencies
-        run: yarn ci
+        run: yarn install --frozen-lockfile
       - name: Run tests
         run: yarn test
   # release:
@@ -54,7 +54,7 @@ jobs:
   #     - name: Cache node modules
   #       uses: c-hive/gha-yarn-cache@v1
   #     - name: Install dependencies
-  #       run: yarn ci
+  #       run: yarn install --frozen-lockfile
   #     - name: Release
   #       run: npx semantic-release
   #       env:
