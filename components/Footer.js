@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import footerStyles from '../styles/Footer.module.css';
 
 const Footer = () => {
@@ -26,9 +24,6 @@ const Footer = () => {
       <a className={footerStyles.item} href="#top">
         Nach oben
       </a>
-      <Link className={footerStyles.item} href="/">
-        <a>Startseite</a>
-      </Link>
       <a
         className={footerStyles.item}
         href="https://kaaaxcreators.de/datenschutz"

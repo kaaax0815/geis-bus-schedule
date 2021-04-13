@@ -4,7 +4,8 @@ import Link from 'next/link';
 import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export default function Home({ props }) {
+  let counter = 0;
   return (
     <div className={styles.container}>
       <Head>
@@ -19,11 +20,29 @@ export default function Home() {
           </a>{' '}
           Busfahrplan
         </h1>
-        <Link href="/8304">
-          <a className={styles.description}>8304</a>
-        </Link>
+        <div className={styles.grid}>
+          {props.map((prop) => (
+            <Link key={counter++} href={'/' + prop.id}>
+              <a key={counter++} className={styles.card}>
+                <p key={counter++}>{prop.id}</p>
+              </a>
+            </Link>
+          ))}
+        </div>
       </main>
       <Footer />
     </div>
   );
+}
+
+// Get List of Linien
+export async function getStaticProps() {
+  const props = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4').then((urls) =>
+    urls.json()
+  );
+  return {
+    props: {
+      props
+    }
+  };
 }

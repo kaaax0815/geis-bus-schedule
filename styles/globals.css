@@ -21,8 +21,10 @@ a {
 :root {
   --main-bg-color: #181818;
   --main-a-color: #0070f3;
+  --main-card-color: #0070f3;
   --main-txt-color: #fff;
   --footer-divider: #eaeaea;
+  --main-border: #eaeaea;
   --main-code-color: #212121;
 }
 
@@ -32,8 +34,10 @@ a {
   :root {
     --main-bg-color: #fff;
     --main-a-color: #0070f3;
+    --main-card-color: #0070f3;
     --main-txt-color: #000;
     --footer-divider: #eaeaea;
+    --main-border: #eaeaea;
     --main-code-color: #fafafa;
   }
 }
