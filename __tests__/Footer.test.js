@@ -14,12 +14,16 @@ describe('Footer', () => {
     expect(getByText('Powered by')).toBeInTheDocument();
     expect(getByText('Datenschutzerklärung')).toBeInTheDocument();
     expect(getByText('Impressum')).toBeInTheDocument();
+    expect(getByText('Nach oben')).toBeInTheDocument();
+    expect(getByText('Startseite')).toBeInTheDocument();
   });
   test('In 404', () => {
     const { getByText } = render(<Custom404 />);
     expect(getByText('Powered by')).toBeInTheDocument();
     expect(getByText('Datenschutzerklärung')).toBeInTheDocument();
     expect(getByText('Impressum')).toBeInTheDocument();
+    expect(getByText('Nach oben')).toBeInTheDocument();
+    expect(getByText('Startseite')).toBeInTheDocument();
   });
   test('In Linie', async () => {
     const props = await fetch('https://api.npoint.io/2361ff205b3905b7ebfc').then((props) =>
@@ -30,5 +34,7 @@ describe('Footer', () => {
     expect(getByText('Powered by')).toBeInTheDocument();
     expect(getByText('Datenschutzerklärung')).toBeInTheDocument();
     expect(getByText('Impressum')).toBeInTheDocument();
+    expect(getByText('Nach oben')).toBeInTheDocument();
+    expect(getByText('Startseite')).toBeInTheDocument();
   });
 });
