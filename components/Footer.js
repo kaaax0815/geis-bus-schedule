@@ -23,8 +23,10 @@ const Footer = () => {
           className={footerStyles.logo}
         />
       </a>
-      <a href="#top">Nach oben</a>
-      <Link href="/">
+      <a className={footerStyles.item} href="#top">
+        Nach oben
+      </a>
+      <Link className={footerStyles.item} href="/">
         <a>Startseite</a>
       </Link>
       <a
