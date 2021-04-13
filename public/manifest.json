@@ -1,0 +1,14 @@
+{
+    "name": "Interaktiver Geis Busfahrplan",
+    "short_name": "Geis Busfahrplan",
+    "description": "Interaktiver Geis Busfahrplan",
+    "lang": "de",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#181818",
+    "icons": [{
+        "src": "favicon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }]
+}

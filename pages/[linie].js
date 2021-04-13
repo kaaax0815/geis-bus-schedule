@@ -18,13 +18,17 @@ export default function Linie({ props, params }) {
         <h2 className={styles.description}>
           Richtungen:
           <br />
-          <Link href="#first" as={params.linie + '#first'}>
+          <Link
+            href={'#' + props[0].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}
+            as={params.linie + '#' + props[0].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
             <a>
               {props[0].FROM} &rarr; {props[0].TO}
             </a>
           </Link>
           <br />
-          <Link href="#second" as={params.linie + '#second'}>
+          <Link
+            href={'#' + props[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}
+            as={params.linie + '#' + props[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
             <a>
               {props[1].FROM} &rarr; {props[1].TO}
             </a>
@@ -32,36 +36,36 @@ export default function Linie({ props, params }) {
         </h2>
       </main>
 
-      <section id="first">
+      <section className={styles.section} id={props[0].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
         <h2 className={styles.description}>
           {props[0].FROM} &rarr; {props[0].TO}
         </h2>
-        <div className={styles.div_container}>
-          <table className={styles.table}>
-            <thead></thead>
-            <tbody>
-              {props[0].array.map((prop) => (
-                <tr key={counter++} className={styles.tr}>
-                  <th key={counter++} className={styles.th}>
-                    {prop.bushaltestelle}
-                  </th>
-                  {prop.zeiten.map((zeit) =>
-                    zeit === 'NULL' ? (
-                      <th key={counter++} className={styles.th}></th>
-                    ) : (
-                      <th key={counter++} className={styles.th}>
-                        {zeit}
-                      </th>
-                    )
-                  )}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <table className={styles.table}>
+          <thead></thead>
+          <tbody>
+            {props[0].array.map((prop) => (
+              <tr key={counter++} className={styles.tr}>
+                <th key={counter++} className={styles.th}>
+                  {prop.bushaltestelle}
+                </th>
+                {prop.zeiten.map((zeit) =>
+                  zeit === 'NULL' ? (
+                    <th key={counter++} className={styles.th}></th>
+                  ) : (
+                    <th key={counter++} className={styles.th}>
+                      {zeit}
+                    </th>
+                  )
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
+
       <br />
-      <section id="second">
+
+      <section className={styles.section} id={props[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
         <h2 className={styles.description}>
           {props[1].FROM} &rarr; {props[1].TO}
         </h2>
@@ -88,19 +92,15 @@ export default function Linie({ props, params }) {
         </table>
       </section>
 
-      <section className={styles.properties}>
-        <p>
-          {
-            <a
-              href={
-                'http://www.lkrhoengrabfeld.rhoen-saale.net/fileServer/LKRG/1000/10118/' +
-                params.linie +
-                '.pdf'
-              }>
-              PDF
-            </a>
-          }
-        </p>
+      <section className={styles.section}>
+        <a
+          href={
+            'http://www.lkrhoengrabfeld.rhoen-saale.net/fileServer/LKRG/1000/10118/' +
+            params.linie +
+            '.pdf'
+          }>
+          PDF
+        </a>
       </section>
       <Footer />
     </div>

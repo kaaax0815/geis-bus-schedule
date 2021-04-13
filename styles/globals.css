@@ -25,3 +25,15 @@ a {
   --footer-divider: #eaeaea;
   --main-code-color: #212121;
 }
+
+
+/* Light Theme */
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-bg-color: #fff;
+    --main-a-color: #0070f3;
+    --main-txt-color: #000;
+    --footer-divider: #eaeaea;
+    --main-code-color: #fafafa;
+  }
+}

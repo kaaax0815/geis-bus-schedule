@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import footerStyles from '../styles/Footer.module.css';
 
 const Footer = () => {
@@ -5,8 +7,7 @@ const Footer = () => {
     <footer className={footerStyles.footer}>
       <a
         className={footerStyles.item}
-        href="https://kaaaxcreators.de"
-        target="_blank"
+        href="https://kaaaxcreators.de/impressum"
         rel="noopener noreferrer">
         Impressum{' '}
       </a>
@@ -22,10 +23,13 @@ const Footer = () => {
           className={footerStyles.logo}
         />
       </a>
+      <a href="#top">Nach oben</a>
+      <Link href="/">
+        <a>Startseite</a>
+      </Link>
       <a
         className={footerStyles.item}
-        href="https://kaaaxcreators.de"
-        target="_blank"
+        href="https://kaaaxcreators.de/datenschutz"
         rel="noopener noreferrer">
         Datenschutzerklärung{' '}
       </a>
