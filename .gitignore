@@ -35,5 +35,9 @@ yarn-error.log*
 
 # JSON Files (in JSON folder)
 /json
+
 # Local Netlify folder
 .netlify
+
+# Coveralls
+.coveralls.yml

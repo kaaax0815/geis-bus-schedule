@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import * as fetch from 'node-fetch';
 
 import Footer from '../components/Footer';
 import styles from '../styles/Linien.module.css';

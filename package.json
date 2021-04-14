@@ -9,6 +9,7 @@
     "start": "next start",
     "serve": "serve out -p 3000",
     "test": "jest",
+    "coverage": "jest --coverage && coveralls < coverage/lcov.info",
     "lint": "eslint . --ignore-path ./.gitignore",
     "lint:fix": "eslint . --ignore-path ./.gitignore --fix"
   },

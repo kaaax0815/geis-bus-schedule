@@ -4,6 +4,7 @@
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square)](https://gitmoji.dev/)
 [![Release CI](https://github.com/kaaax0815/geis-bus-schedule/actions/workflows/release.yml/badge.svg)](https://github.com/kaaax0815/geis-bus-schedule/actions/workflows/release.yml)
 [![Todo](https://img.shields.io/badge/-TODO-informational)](https://github.com/users/kaaax0815/projects/1#card-57999433)
+[![Coverage Status](https://coveralls.io/repos/github/kaaax0815/geis-bus-schedule/badge.svg?branch=main)](https://coveralls.io/github/kaaax0815/geis-bus-schedule?branch=main)
 
 This is my first Next.js App.
 
