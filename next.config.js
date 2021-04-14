@@ -2,7 +2,7 @@ const withOffline = require('next-offline');
 
 const nextConfig = {
   future: {
-    webpack5: false
+    webpack5: true
   },
   poweredByHeader: false,
   workboxOpts: {
@@ -35,8 +35,11 @@ const nextConfig = {
           cacheName: 'images'
         }
       }
-    ]
+    ],
+    // https://github.com/hanford/next-offline/issues/190#issuecomment-819499496
+    modifyURLPrefix: { 'autostatic/': '_next/static/' }
   }
 };
 
 module.exports = withOffline(nextConfig);
+// module.exports = nextConfig;
