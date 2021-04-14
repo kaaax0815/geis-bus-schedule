@@ -22,7 +22,7 @@ export default function Home({ props }) {
         </h1>
         <div className={styles.grid}>
           {props.map((prop) => (
-            <Link key={counter++} href={'/' + prop.id}>
+            <Link key={counter++} href={'/' + prop.id.replace(/ /g, '—')}>
               <a key={counter++} className={styles.card}>
                 <p key={counter++}>{prop.id}</p>
               </a>

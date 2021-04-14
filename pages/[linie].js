@@ -9,12 +9,12 @@ export default function Linie({ props, params }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{params.linie} - Geis Busfahrplan</title>
+        <title>{params.linie.replace(/—/g, ' ')} - Geis Busfahrplan</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Linie: {params.linie}</h1>
+        <h1 className={styles.title}>Linie: {params.linie.replace(/—/g, ' ')}</h1>
         <h2 className={styles.description}>
           Richtungen:
           <br />
@@ -112,7 +112,7 @@ export async function getStaticProps({ params }) {
   const urls = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4').then((urls) =>
     urls.json()
   );
-  const filtered = urls.filter((url) => url.id === params.linie);
+  const filtered = urls.filter((url) => url.id.replace(/ /g, '—') === params.linie);
   const props = await fetch('https://api.npoint.io/' + filtered[0].url).then((props) =>
     props.json()
   );
@@ -128,7 +128,7 @@ export async function getStaticPaths() {
   const res = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4');
   const json = await res.json();
   const linien = json.map((linie) => linie.id);
-  const paths = linien.map((linie) => ({ params: { linie: linie.toString() } }));
+  const paths = linien.map((linie) => ({ params: { linie: linie.replace(/ /g, '—') } }));
   return {
     paths,
     fallback: false
