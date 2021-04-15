@@ -10,7 +10,7 @@ export default function Home({ props }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Geis Busfahrplan</title>
+        <title>Busfahrplan - Kurt Geis GmbH</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

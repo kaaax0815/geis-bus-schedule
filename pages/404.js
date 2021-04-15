@@ -8,8 +8,7 @@ export default function Custom404() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Seite nicht gefunden - Geis Busfahrplan</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Seite nicht gefunden - Busfahrplan - Kurt Geis GmbH</title>
       </Head>
       <main className={styles.main}>
         <h1 className={styles.title}>404 - Seite nicht gefunden</h1>

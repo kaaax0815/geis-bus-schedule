@@ -10,8 +10,7 @@ export default function Linie({ props, params }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{params.linie.replace(/—/g, ' ')} - Geis Busfahrplan</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{params.linie.replace(/—/g, ' ')} - Busfahrplan - Kurt Geis GmbH</title>
       </Head>
 
       <main className={styles.main}>
