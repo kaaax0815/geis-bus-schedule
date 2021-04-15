@@ -37,7 +37,8 @@ const nextConfig = {
       }
     ],
     // https://github.com/hanford/next-offline/issues/190#issuecomment-819499496
-    modifyURLPrefix: { 'autostatic/': '_next/static/' }
+    modifyURLPrefix: { 'autostatic/': '_next/static/' },
+    additionalManifestEntries: [{ url: 'index.html', revision: '2A99D780840F7DF0A8851084E8AAADBE' }]
   }
 };
 
