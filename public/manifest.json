@@ -1,14 +1,23 @@
 {
-    "name": "Interaktiver Geis Busfahrplan",
-    "short_name": "Geis Busfahrplan",
-    "description": "Interaktiver Geis Busfahrplan",
-    "lang": "de",
-    "start_url": "/",
-    "display": "standalone",
-    "theme_color": "#181818",
-    "icons": [{
-        "src": "favicon-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-    }]
+  "name": "Busfahrplan - Kurt Geis GmbH",
+  "short_name": "Geis Busfahrplan",
+  "description": "Das ist der offizielle Busfahrplan für Kurt Geis GmbH. Sehen Sie alle Zeiten für alle Linien",
+  "lang": "de",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#181818",
+  "icons": [
+    {
+      "src": "manifest-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "manifest-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
 }
