@@ -6,6 +6,7 @@
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#181818",
+  "background_color": "#181818",
   "icons": [
     {
       "src": "manifest-icon-192.png",
