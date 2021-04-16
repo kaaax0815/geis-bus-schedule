@@ -15,16 +15,16 @@ export default {
         alt: 'kaaaxcreators Logo'
       },
       {
-        url: 'https://brave-feynman-a25437.netlify.app/manifest-icon-192.png',
-        width: 192,
-        height: 192,
+        url: 'https://brave-feynman-a25437.netlify.app/apple-touch-icon-precomposed.png',
+        width: 180,
+        height: 180,
         alt: 'kaaaxcreators Logo'
       }
     ]
   },
   twitter: {
     site: '@kaaax0815',
-    cardType: 'summary_large_image'
+    cardType: 'summary'
   },
   additionalLinkTags: [
     {
