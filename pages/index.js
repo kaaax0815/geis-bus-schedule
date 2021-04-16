@@ -19,7 +19,7 @@ export default function Home({ props }) {
           <a href="http://www.geis-reisen.de" target="_blank" rel="noopener noreferrer">
             Geis
           </a>{' '}
-          Busfahrplan
+          Bus&shy;fahr&shy;plan
         </h1>
         <div className={styles.grid}>
           {props.map((prop) => (
