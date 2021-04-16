@@ -9,9 +9,15 @@ export default {
     site_name: 'Busfahrplan - Kurt Geis GmbH',
     images: [
       {
-        url: 'https://brave-feynman-a25437.netlify.app/favicon.png',
+        url: 'https://brave-feynman-a25437.netlify.app/manifest-icon-512.png',
         width: 512,
         height: 512,
+        alt: 'kaaaxcreators Logo'
+      },
+      {
+        url: 'https://brave-feynman-a25437.netlify.app/manifest-icon-192.png',
+        width: 192,
+        height: 192,
         alt: 'kaaaxcreators Logo'
       }
     ]

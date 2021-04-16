@@ -12,7 +12,7 @@ describe('Homepage', () => {
     const props = linien;
     const { getByText } = render(<Home props={props} />);
     expect(getByText('Geis')).toBeInTheDocument();
-    expect(getByText('Busfahrplan')).toBeInTheDocument();
+    expect(getByText('Bus­fahr­plan')).toBeInTheDocument(); // <- Soft Hyphen (&shy;) in there
     expect(getByText('8304')).toBeInTheDocument();
   });
   test('In Home', async () => {
