@@ -6,6 +6,7 @@ const Footer = () => {
       <a
         className={footerStyles.item}
         href="https://kaaaxcreators.de/impressum"
+        title="Impressum"
         rel="noopener noreferrer">
         Impressum{' '}
       </a>
@@ -13,6 +14,7 @@ const Footer = () => {
         className={footerStyles.item}
         href="https://kaaaxcreators.de"
         target="_blank"
+        title="Bernd Storath - Programmierer"
         rel="noopener noreferrer">
         Powered by{' '}
         <img
@@ -27,6 +29,7 @@ const Footer = () => {
       <a
         className={footerStyles.item}
         href="https://kaaaxcreators.de/datenschutz"
+        title="Datenschutzerklärung"
         rel="noopener noreferrer">
         Datenschutzerklärung{' '}
       </a>

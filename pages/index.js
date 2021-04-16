@@ -16,7 +16,11 @@ export default function Home({ props }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          <a href="http://www.geis-reisen.de" target="_blank" rel="noopener noreferrer">
+          <a
+            title="Omnisbus Geis"
+            href="http://www.geis-reisen.de"
+            target="_blank"
+            rel="noopener noreferrer">
             Geis
           </a>{' '}
           Bus&shy;fahr&shy;plan
@@ -24,7 +28,7 @@ export default function Home({ props }) {
         <div className={styles.grid}>
           {props.map((prop) => (
             <Link key={counter++} href={'/' + prop.id.replace(/ /g, '—')}>
-              <a key={counter++} className={styles.card}>
+              <a title={prop.id} key={counter++} className={styles.card}>
                 <p key={counter++}>{prop.id}</p>
               </a>
             </Link>
