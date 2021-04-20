@@ -64,6 +64,7 @@
   vertical-align: top
 }
 
+/* zebra effect */
 .tr:nth-of-type(odd) {
   background: var(--main-code-color);
 }
