@@ -109,11 +109,11 @@ export default function Linie({ props, params }: Linie) {
 }
 
 // Get Json based on Path
-export const getStaticProps: GetStaticProps = async (params: any) => {
-  const urls = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4').then((urls:any) =>
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const urls = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4').then((urls: any) =>
     urls.json()
   );
-  const filtered = urls.filter((url:any) => url.id.replace(/ /g, '—') === params.linie);
+  const filtered = urls.filter((url: Url) => url.id.replace(/ /g, '—') === params?.linie);
   const props = await fetch('https://api.npoint.io/' + filtered[0].url).then((props:any) =>
     props.json()
   );
@@ -129,8 +129,8 @@ export const getStaticProps: GetStaticProps = async (params: any) => {
 export const getStaticPaths : GetStaticPaths = async () => {
   const res = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4');
   const json = await res.json();
-  const linien = json.map((linie:any) => linie.id);
-  const paths = linien.map((linie:any) => ({ params: { linie: linie.replace(/ /g, '—') } }));
+  const linien = json.map((linie:Url) => linie.id);
+  const paths = linien.map((linie:string) => ({ params: { linie: linie.replace(/ /g, '—') } }));
   return {
     paths,
     fallback: false
@@ -149,11 +149,16 @@ interface Props {
   array: Array<Prop>;
 }
 
-interface Params {
+interface Param {
   linie: string;
 }
 
 interface Linie {
   props: Array<Props>;
-  params: Params;
+  params: Param;
+}
+
+interface Url {
+  id: string;
+  url: string;
 }
