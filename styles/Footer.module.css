@@ -15,6 +15,12 @@
     margin-left: 0.5rem;
 }
 
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+  text-decoration: underline;
+}
+
 .footer a {
     display: flex;
     justify-content: center;
