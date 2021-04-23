@@ -1,6 +1,8 @@
 .container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
+  min-height: 98vh;
+  margin: 0 0.2vh;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +10,6 @@
 }
 
 .main {
-  padding: 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -17,7 +18,7 @@
 }
 
 .title {
-  margin: 0;
+  margin: 0 auto;
   line-height: 1.15;
   font-size: 4rem;
 }
