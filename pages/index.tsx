@@ -53,7 +53,7 @@ export async function getStaticProps() {
 }
 
 interface Home {
-  props:Props[];
+  props: Props[];
 }
 
 interface Props {
