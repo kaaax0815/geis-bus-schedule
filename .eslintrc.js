@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
@@ -17,9 +18,11 @@ module.exports = {
     amd: true,
     node: true
   },
-  plugins: ['simple-import-sort'],
+  plugins: ['simple-import-sort', '@typescript-eslint', 'prettier'],
   extends: [
     'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended' // Make sure this is always the last element in the array.
@@ -36,6 +39,15 @@ module.exports = {
         specialLink: ['hrefLeft', 'hrefRight'],
         aspects: ['invalidHref', 'preferButton']
       }
-    ]
-  }
+    ],
+    '@typescript-eslint/explicit-module-boundary-types': 'off'
+  },
+  overrides: [
+    {
+      files: ['*.js', '*.jsx'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off'
+      }
+    }
+  ]
 };
