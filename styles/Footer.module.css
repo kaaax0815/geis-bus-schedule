@@ -1,18 +1,18 @@
 .footer {
-    width: 100%;
-    height: 50px;
-    border-top: 1px solid var(--footer-divider);
-    display: flex;
-    justify-content: space-between;
-    align-items: space-evenly;
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid var(--footer-divider);
+  display: flex;
+  justify-content: space-between;
+  align-items: space-evenly;
 }
 
 .item {
-    flex: 1;
+  flex: 1;
 }
 
 .footer img {
-    margin-left: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .footer a:hover,
@@ -22,17 +22,17 @@
 }
 
 .footer a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
-    height: 1em;
+  height: 1em;
 }
 
 @media (max-width: 500px) {
-    .footer {
-      flex-direction: column;
-    }
+  .footer {
+    flex-direction: column;
   }
+}
