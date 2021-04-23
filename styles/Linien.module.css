@@ -2,10 +2,12 @@
   min-height: 100vh;
   padding: 0 0.5rem;
   width: 100%;
-  /*display: block;*/
-  /*flex-direction: column;
+
+  /* display: block; */
+
+  /* flex-direction: column;
   justify-content: center;
-  /*align-items: center;*/
+  /*align-items: center; */
 }
 
 .main {
@@ -17,7 +19,7 @@
   align-items: center;
 }
 
-.table { 
+.table {
   border-collapse: collapse;
   margin: 0 auto;
   border-spacing: 0;
@@ -66,7 +68,7 @@
 .tg .th {
   border-color: inherit;
   text-align: left;
-  vertical-align: top
+  vertical-align: top;
 }
 
 /* zebra effect */
