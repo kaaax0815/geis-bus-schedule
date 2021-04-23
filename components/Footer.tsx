@@ -3,15 +3,10 @@ import footerStyles from '../styles/Footer.module.css';
 const Footer: React.FC = () => {
   return (
     <footer className={footerStyles.footer}>
-      <a
-        className={footerStyles.item}
-        href="https://kaaaxcreators.de/impressum"
-        title="Impressum"
-        rel="noopener noreferrer">
+      <a href="https://kaaaxcreators.de/impressum" title="Impressum" rel="noopener noreferrer">
         Impressum{' '}
       </a>
       <a
-        className={footerStyles.item}
         href="https://kaaaxcreators.de"
         target="_blank"
         title="Bernd Storath - Programmierer"
@@ -23,11 +18,8 @@ const Footer: React.FC = () => {
           className={footerStyles.logo}
         />
       </a>
-      <a className={footerStyles.item} href="#top">
-        Nach oben
-      </a>
+      <a href="#top">Nach oben</a>
       <a
-        className={footerStyles.item}
         href="https://kaaaxcreators.de/datenschutz"
         title="Datenschutzerklärung"
         rel="noopener noreferrer">
