@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import * as fetch from 'node-fetch';
+import fetch from 'node-fetch';
 
 import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
 
-export default function Home({ props }) {
+export default function Home({ props }: Home) {
   let counter = 0;
   return (
     <div className={styles.container}>
@@ -50,4 +50,13 @@ export async function getStaticProps() {
       props
     }
   };
+}
+
+interface Home {
+  props: Array<Props>;
+}
+
+interface Props {
+  id: string;
+  url: string;
 }

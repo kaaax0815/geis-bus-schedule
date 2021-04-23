@@ -1,11 +1,12 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import * as fetch from 'node-fetch';
+import fetch from 'node-fetch';
 
 import Footer from '../components/Footer';
 import styles from '../styles/Linien.module.css';
 
-export default function Linie({ props, params }) {
+export default function Linie({ props, params }: Linie) {
   let counter = 0;
   return (
     <div className={styles.container}>
@@ -43,7 +44,7 @@ export default function Linie({ props, params }) {
         <table className={styles.table}>
           <thead></thead>
           <tbody>
-            {props[0].array.map((prop) => (
+            {props[0].array.map((prop: Prop) => (
               <tr key={counter++} className={styles.tr}>
                 <th key={counter++} className={styles.th}>
                   {prop.bushaltestelle}
@@ -72,7 +73,7 @@ export default function Linie({ props, params }) {
         <table className={styles.table}>
           <thead></thead>
           <tbody>
-            {props[1].array.map((prop) => (
+            {props[1].array.map((prop: Prop) => (
               <tr key={counter++} className={styles.tr}>
                 <th key={counter++} className={styles.th}>
                   {prop.bushaltestelle}
@@ -108,12 +109,12 @@ export default function Linie({ props, params }) {
 }
 
 // Get Json based on Path
-export async function getStaticProps({ params }) {
-  const urls = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4').then((urls) =>
+export const getStaticProps: GetStaticProps = async (params: any) => {
+  const urls = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4').then((urls:any) =>
     urls.json()
   );
-  const filtered = urls.filter((url) => url.id.replace(/ /g, '—') === params.linie);
-  const props = await fetch('https://api.npoint.io/' + filtered[0].url).then((props) =>
+  const filtered = urls.filter((url:any) => url.id.replace(/ /g, '—') === params.linie);
+  const props = await fetch('https://api.npoint.io/' + filtered[0].url).then((props:any) =>
     props.json()
   );
   return {
@@ -123,14 +124,36 @@ export async function getStaticProps({ params }) {
     }
   };
 }
+
 // Specify all Paths because its SSG
-export async function getStaticPaths() {
+export const getStaticPaths : GetStaticPaths = async () => {
   const res = await fetch('https://api.npoint.io/5853be5c4d0d6999f9d4');
   const json = await res.json();
-  const linien = json.map((linie) => linie.id);
-  const paths = linien.map((linie) => ({ params: { linie: linie.replace(/ /g, '—') } }));
+  const linien = json.map((linie:any) => linie.id);
+  const paths = linien.map((linie:any) => ({ params: { linie: linie.replace(/ /g, '—') } }));
   return {
     paths,
     fallback: false
   };
+}
+
+interface Prop {
+  bushaltestelle: string;
+  zeiten: string[];
+  infos: string[];
+}
+
+interface Props {
+  TO: string;
+  FROM: string;
+  array: Array<Prop>;
+}
+
+interface Params {
+  linie: string;
+}
+
+interface Linie {
+  props: Array<Props>;
+  params: Params;
 }
