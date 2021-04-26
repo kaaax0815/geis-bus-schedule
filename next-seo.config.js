@@ -91,7 +91,7 @@ export default {
   ],
   additionalMetaTags: [
     {
-      property: 'theme-color',
+      name: 'theme-color',
       content: '#181818'
     },
     {
