@@ -5,6 +5,8 @@
   "lang": "de",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait",
+  "dir": "ltr",
   "theme_color": "#181818",
   "background_color": "#181818",
   "icons": [
