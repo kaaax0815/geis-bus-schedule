@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-const linie8304 = [{"TO":"NES","FROM":"KÖN","array":[{"infos":["NULL","F"],"zeiten":["05:55","06:35"],"bushaltestelle":"KÖNNES1"},{"infos":["NULL","F"],"zeiten":["NULL","NULL"],"bushaltestelle":"KÖNNES2"}]},{"TO":"KÖN","FROM":"NES","array":[{"infos":["NULL","F","S"],"zeiten":["05:55","06:35"],"bushaltestelle":"NESKÖN1"},{"infos":["NULL","F"],"zeiten":["NULL","NULL"],"bushaltestelle":"NESKÖN2"}]}];
+const linie8304 = {"global":{"INFOS":[{"id":"1","text":"an Schultagen (in Bayern)"},{"id":"A","text":"Montag - Freitag (Werktage)"}]},"arrays":[{"FROM":"Bad Königshofen","TO":"Bad Neustadt","INFO":["A"],"array":[{"bushaltestelle":"Bad Königshofen, Franken-T...","zeiten":["NULL"]}]},{"FROM":"Bad Neustadt","TO":"Bad Königshofen","INFO":["1"],"array":[{"bushaltestelle":"Bad Neustadt, ZOB","zeiten":["05:45"]}]}]};
 const linien = [{"id":"8304","url":"2361ff205b3905b7ebfc"}];
 
 module.exports = {linie8304, linien};
