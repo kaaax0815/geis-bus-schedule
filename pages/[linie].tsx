@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import fetch from 'node-fetch';
+import ReactTooltip from 'react-tooltip';
 
 import Footer from '../components/Footer';
 import styles from '../styles/Linien.module.css';
@@ -20,31 +21,56 @@ export default function Linie({ props, params }: Linie) {
           Richtungen:
           <br />
           <Link
-            href={'#' + props[0].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}
-            as={params.linie + '#' + props[0].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
+            href={'#' + props.arrays[0].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}
+            as={params.linie + '#' + props.arrays[0].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
             <a>
-              {props[0].FROM} &rarr; {props[0].TO}
+              {props.arrays[0].FROM} &rarr; {props.arrays[0].TO}
             </a>
           </Link>
           <br />
           <Link
-            href={'#' + props[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}
-            as={params.linie + '#' + props[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
+            href={'#' + props.arrays[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}
+            as={params.linie + '#' + props.arrays[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
             <a>
-              {props[1].FROM} &rarr; {props[1].TO}
+              {props.arrays[1].FROM} &rarr; {props.arrays[1].TO}
             </a>
           </Link>
         </h2>
       </main>
 
-      <section className={styles.section} id={props[0].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
+      <section
+        className={styles.section}
+        id={props.arrays[0].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
         <h2 className={styles.description}>
-          {props[0].FROM} &rarr; {props[0].TO}
+          {props.arrays[0].FROM} &rarr; {props.arrays[0].TO}
         </h2>
         <table className={styles.table}>
           <thead></thead>
           <tbody>
-            {props[0].array.map((prop: Prop) => (
+            <tr key={counter++} className={styles.tr}>
+              <th key={counter++} className={styles.th}>
+                Beschränkungen
+              </th>
+              {props.arrays[0].INFO.map((info: string) => (
+                <th key={counter++} className={styles.th}>
+                  <div
+                    data-tip={
+                      props.global.INFOS.filter((filter: INFO) => filter.id === info)[0].text
+                    }
+                    className={styles.info}>
+                    {info}
+                  </div>
+                </th>
+              ))}
+              <ReactTooltip />
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            {props.arrays[0].array.map((prop: Array) => (
               <tr key={counter++} className={styles.tr}>
                 <th key={counter++} className={styles.th}>
                   {prop.bushaltestelle}
@@ -66,14 +92,16 @@ export default function Linie({ props, params }: Linie) {
 
       <br />
 
-      <section className={styles.section} id={props[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
+      <section
+        className={styles.section}
+        id={props.arrays[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
         <h2 className={styles.description}>
-          {props[1].FROM} &rarr; {props[1].TO}
+          {props.arrays[1].FROM} &rarr; {props.arrays[1].TO}
         </h2>
         <table className={styles.table}>
           <thead></thead>
           <tbody>
-            {props[1].array.map((prop: Prop) => (
+            {props.arrays[1].array.map((prop: Array) => (
               <tr key={counter++} className={styles.tr}>
                 <th key={counter++} className={styles.th}>
                   {prop.bushaltestelle}
@@ -137,16 +165,30 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-interface Prop {
+interface Global {
+  INFOS: INFO[];
+}
+
+interface INFO {
+  id: string;
+  text: string;
+}
+
+interface Arrays {
+  FROM: string;
+  TO: string;
+  INFO: string[];
+  array: Array[];
+}
+
+interface Array {
   bushaltestelle: string;
   zeiten: string[];
-  infos: string[];
 }
 
 interface Props {
-  TO: string;
-  FROM: string;
-  array: Prop[];
+  global: Global;
+  arrays: Arrays[];
 }
 
 interface Param {
@@ -154,7 +196,7 @@ interface Param {
 }
 
 interface Linie {
-  props: Props[];
+  props: Props;
   params: Param;
 }
 
