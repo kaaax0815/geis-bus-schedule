@@ -1,8 +1,10 @@
+import 'tippy.js/dist/tippy.css';
+
+import Tippy from '@tippyjs/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import fetch from 'node-fetch';
-import ReactTooltip from 'react-tooltip';
 
 import Footer from '../components/Footer';
 import styles from '../styles/Linien.module.css';
@@ -22,15 +24,15 @@ export default function Linie({ props, params }: Linie) {
           <br />
           <Link
             href={'#' + props.arrays[0].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}
-            as={params.linie + '#' + props.arrays[0].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
+            as={'/' + params.linie + '#' + props.arrays[0].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
             <a>
               {props.arrays[0].FROM} &rarr; {props.arrays[0].TO}
             </a>
           </Link>
           <br />
           <Link
-            href={'#' + props.arrays[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}
-            as={params.linie + '#' + props.arrays[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
+            href={'/#' + props.arrays[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}
+            as={'/' + params.linie + '#' + props.arrays[1].FROM.replace(/[^A-Za-z0-9\-_]/g, '-')}>
             <a>
               {props.arrays[1].FROM} &rarr; {props.arrays[1].TO}
             </a>
@@ -53,16 +55,14 @@ export default function Linie({ props, params }: Linie) {
               </th>
               {props.arrays[0].INFO.map((info: string) => (
                 <th key={counter++} className={styles.th}>
-                  <div
-                    data-tip={
+                  <Tippy
+                    content={
                       props.global.INFOS.filter((filter: INFO) => filter.id === info)[0].text
-                    }
-                    className={styles.info}>
-                    {info}
-                  </div>
+                    }>
+                    <div className={styles.info}>{info}</div>
+                  </Tippy>
                 </th>
               ))}
-              <ReactTooltip />
             </tr>
             <tr>
               <td></td>
@@ -116,7 +116,6 @@ export default function Linie({ props, params }: Linie) {
                   </div>
                 </th>
               ))}
-              <ReactTooltip />
             </tr>
             <tr>
               <td></td>

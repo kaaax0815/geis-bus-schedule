@@ -1,15 +1,14 @@
-/* eslint-disable no-undef */
 import '@testing-library/jest-dom/extend-expect';
 
 import { render } from '@testing-library/react';
-var { linien } = require('../__mocks__/propsMock');
 
+import linien from '../__mocks__/propsMock';
 import Home from '../pages/index';
 import { getStaticProps } from '../pages/index';
 
 describe('Homepage', () => {
   test('In Home', async () => {
-    const props = linien;
+    const props = linien.linien;
     const { getByText } = render(<Home props={props} />);
     expect(getByText('Geis')).toBeInTheDocument();
     expect(getByText('Bus­fahr­plan')).toBeInTheDocument(); // <- Soft Hyphen (&shy;) in there
