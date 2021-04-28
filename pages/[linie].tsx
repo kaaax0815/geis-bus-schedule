@@ -101,6 +101,29 @@ export default function Linie({ props, params }: Linie) {
         <table className={styles.table}>
           <thead></thead>
           <tbody>
+            <tr key={counter++} className={styles.tr}>
+              <th key={counter++} className={styles.th}>
+                Beschränkungen
+              </th>
+              {props.arrays[1].INFO.map((info: string) => (
+                <th key={counter++} className={styles.th}>
+                  <div
+                    data-tip={
+                      props.global.INFOS.filter((filter: INFO) => filter.id === info)[0].text
+                    }
+                    className={styles.info}>
+                    {info}
+                  </div>
+                </th>
+              ))}
+              <ReactTooltip />
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
             {props.arrays[1].array.map((prop: Array) => (
               <tr key={counter++} className={styles.tr}>
                 <th key={counter++} className={styles.th}>
