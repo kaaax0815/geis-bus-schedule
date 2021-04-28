@@ -1,0 +1,1 @@
+Install poppler and tesseract and add to PATH 

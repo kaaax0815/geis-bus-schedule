@@ -1,0 +1,8 @@
+{
+  "key": "shift+numpad_divide",
+  "command": "editor.action.insertSnippet",
+  "args": {
+		"snippet": "\"NULL\","
+	},
+  "when": "editorTextFocus"
+}
