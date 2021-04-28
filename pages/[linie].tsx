@@ -107,13 +107,12 @@ export default function Linie({ props, params }: Linie) {
               </th>
               {props.arrays[1].INFO.map((info: string) => (
                 <th key={counter++} className={styles.th}>
-                  <div
-                    data-tip={
+                  <Tippy
+                    content={
                       props.global.INFOS.filter((filter: INFO) => filter.id === info)[0].text
-                    }
-                    className={styles.info}>
-                    {info}
-                  </div>
+                    }>
+                    <div className={styles.info}>{info}</div>
+                  </Tippy>
                 </th>
               ))}
             </tr>
