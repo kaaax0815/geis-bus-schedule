@@ -1,6 +1,2 @@
-const params: Param = { linie: '8304' };
-module.exports = params;
-
-interface Param {
-  linie: string;
-}
+const params = { linie: '8304' };
+export default params;

@@ -14,7 +14,7 @@ JSON and PDF Files are in [assets](https://github.com/kaaax0815/geis-bus-schedul
 
 ### Noteworthy Dependencies
 
-[react-tooltip - MIT](https://www.npmjs.com/package/react-tooltip)
+[@tippyjs/react - MIT](https://www.npmjs.com/package/@tippyjs/react)
 Used for Tooltip on Info hover
 
 [next-sitemap - MIT](https://www.npmjs.com/package/next-sitemap)
