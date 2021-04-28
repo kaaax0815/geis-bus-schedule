@@ -6,6 +6,22 @@
 [![Todo](https://img.shields.io/badge/-TODO-informational)](https://github.com/users/kaaax0815/projects/1#card-57999433)
 [![Coverage Status](https://coveralls.io/repos/github/kaaax0815/geis-bus-schedule/badge.svg?branch=main)](https://coveralls.io/github/kaaax0815/geis-bus-schedule?branch=main)
 
-This is my first Next.js App.
+## This is my first Next.js SSG App
 
-Its a website to show my local bus schedule, because we dont have a proper site with all the times
+Its a website to show my local bus schedule, because we don't have a proper site with all the times
+
+JSON and PDF Files are in [assets](https://github.com/kaaax0815/geis-bus-schedule/tree/main/assets)
+
+### Noteworthy Dependencies
+
+[react-tooltip - MIT](https://www.npmjs.com/package/react-tooltip)
+Used for Tooltip on Info hover
+
+[next-sitemap - MIT](https://www.npmjs.com/package/next-sitemap)
+Generates Sitemap out of pages
+
+[next-seo - MIT](https://www.npmjs.com/package/next-seo)
+Adds meta and link tags to html
+
+[next-offline - MIT](https://www.npmjs.com/package/next-offline)
+Generates service worker
