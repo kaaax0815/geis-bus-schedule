@@ -33,9 +33,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# JSON Files (in JSON folder)
-/json
-
 # Local Netlify folder
 .netlify
 
