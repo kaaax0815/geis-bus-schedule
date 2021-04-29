@@ -4,7 +4,7 @@
   border-top: 1px solid var(--footer-divider);
   display: flex;
   justify-content: space-around;
-  align-items: space-evenly;
+  align-items: center;
 }
 
 .footer img {
@@ -30,5 +30,6 @@
 @media (max-width: 500px) {
   .footer {
     flex-direction: column;
+    justify-content: space-between;
   }
 }
