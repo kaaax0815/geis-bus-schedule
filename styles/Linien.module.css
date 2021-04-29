@@ -17,7 +17,6 @@
   border-collapse: collapse;
   margin: 0 auto;
   border-spacing: 0;
-  overflow-x: auto;
 }
 
 .table td {
@@ -61,7 +60,7 @@
   text-decoration: underline;
 }
 
-.section {
+.divtable {
   overflow: auto;
 }
 

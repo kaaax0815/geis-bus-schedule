@@ -46,48 +46,50 @@ export default function Linie({ props, params }: Linie) {
         <h2 className={styles.description}>
           {props.arrays[0].FROM} &rarr; {props.arrays[0].TO}
         </h2>
-        <table className={styles.table}>
-          <thead></thead>
-          <tbody>
-            <tr key={counter++} className={styles.tr}>
-              <th key={counter++} className={styles.th}>
-                Beschränkungen
-              </th>
-              {props.arrays[0].INFO.map((info: string) => (
-                <th key={counter++} className={styles.th}>
-                  <Tippy
-                    content={
-                      props.global.INFOS.filter((filter: INFO) => filter.id === info)[0].text
-                    }>
-                    <div className={styles.info}>{info}</div>
-                  </Tippy>
-                </th>
-              ))}
-            </tr>
-            <tr>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-            </tr>
-            {props.arrays[0].array.map((prop: Array) => (
+        <div className={styles.divtable}>
+          <table className={styles.table}>
+            <thead></thead>
+            <tbody>
               <tr key={counter++} className={styles.tr}>
                 <th key={counter++} className={styles.th}>
-                  {prop.bushaltestelle}
+                  Beschränkungen
                 </th>
-                {prop.zeiten.map((zeit) =>
-                  zeit === 'NULL' ? (
-                    <th key={counter++} className={styles.th}></th>
-                  ) : (
-                    <th key={counter++} className={styles.th}>
-                      {zeit}
-                    </th>
-                  )
-                )}
+                {props.arrays[0].INFO.map((info: string) => (
+                  <th key={counter++} className={styles.th}>
+                    <Tippy
+                      content={
+                        props.global.INFOS.filter((filter: INFO) => filter.id === info)[0].text
+                      }>
+                      <div className={styles.info}>{info}</div>
+                    </Tippy>
+                  </th>
+                ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+              <tr>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+              {props.arrays[0].array.map((prop: Array) => (
+                <tr key={counter++} className={styles.tr}>
+                  <th key={counter++} className={styles.th}>
+                    {prop.bushaltestelle}
+                  </th>
+                  {prop.zeiten.map((zeit) =>
+                    zeit === 'NULL' ? (
+                      <th key={counter++} className={styles.th}></th>
+                    ) : (
+                      <th key={counter++} className={styles.th}>
+                        {zeit}
+                      </th>
+                    )
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <br />
@@ -98,48 +100,50 @@ export default function Linie({ props, params }: Linie) {
         <h2 className={styles.description}>
           {props.arrays[1].FROM} &rarr; {props.arrays[1].TO}
         </h2>
-        <table className={styles.table}>
-          <thead></thead>
-          <tbody>
-            <tr key={counter++} className={styles.tr}>
-              <th key={counter++} className={styles.th}>
-                Beschränkungen
-              </th>
-              {props.arrays[1].INFO.map((info: string) => (
-                <th key={counter++} className={styles.th}>
-                  <Tippy
-                    content={
-                      props.global.INFOS.filter((filter: INFO) => filter.id === info)[0].text
-                    }>
-                    <div className={styles.info}>{info}</div>
-                  </Tippy>
-                </th>
-              ))}
-            </tr>
-            <tr>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-            </tr>
-            {props.arrays[1].array.map((prop: Array) => (
+        <div className={styles.divtable}>
+          <table className={styles.table}>
+            <thead></thead>
+            <tbody>
               <tr key={counter++} className={styles.tr}>
                 <th key={counter++} className={styles.th}>
-                  {prop.bushaltestelle}
+                  Beschränkungen
                 </th>
-                {prop.zeiten.map((zeit) =>
-                  zeit === 'NULL' ? (
-                    <th key={counter++} className={styles.th}></th>
-                  ) : (
-                    <th key={counter++} className={styles.th}>
-                      {zeit}
-                    </th>
-                  )
-                )}
+                {props.arrays[1].INFO.map((info: string) => (
+                  <th key={counter++} className={styles.th}>
+                    <Tippy
+                      content={
+                        props.global.INFOS.filter((filter: INFO) => filter.id === info)[0].text
+                      }>
+                      <div className={styles.info}>{info}</div>
+                    </Tippy>
+                  </th>
+                ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+              <tr>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+              {props.arrays[1].array.map((prop: Array) => (
+                <tr key={counter++} className={styles.tr}>
+                  <th key={counter++} className={styles.th}>
+                    {prop.bushaltestelle}
+                  </th>
+                  {prop.zeiten.map((zeit) =>
+                    zeit === 'NULL' ? (
+                      <th key={counter++} className={styles.th}></th>
+                    ) : (
+                      <th key={counter++} className={styles.th}>
+                        {zeit}
+                      </th>
+                    )
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section className={styles.section}>
