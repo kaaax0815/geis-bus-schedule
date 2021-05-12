@@ -1,10 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans&display=swap');
+@font-face {
+  font-family: "Futura Std Medium";
+  src: url("http://db.onlinewebfonts.com/t/6e390d15863032277a741e08a6b18ce2.eot");
+  src:
+    url("http://db.onlinewebfonts.com/t/6e390d15863032277a741e08a6b18ce2.eot?#iefix") format("embedded-opentype"),
+    url("http://db.onlinewebfonts.com/t/6e390d15863032277a741e08a6b18ce2.woff2") format("woff2"),
+    url("http://db.onlinewebfonts.com/t/6e390d15863032277a741e08a6b18ce2.woff") format("woff"),
+    url("http://db.onlinewebfonts.com/t/6e390d15863032277a741e08a6b18ce2.ttf") format("truetype"),
+    url("http://db.onlinewebfonts.com/t/6e390d15863032277a741e08a6b18ce2.svg#Futura Std Medium") format("svg");
+  font-display: swap;
+}
 
 html,
 body {
   color: var(--main-txt-color);
   background-color: var(--main-bg-color);
-  font-family: 'Google Sans', arial, sans-serif;
+  font-family: 'Futura Std Medium', arial, sans-serif;
 }
 
 a {
