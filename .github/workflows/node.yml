@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 14
       - name: Cache node modules
-        uses: c-hive/gha-yarn-cache@v1
+        uses: c-hive/gha-yarn-cache@v2.1.0
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Run lint command
@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: 14
       - name: Cache node modules
-        uses: c-hive/gha-yarn-cache@v1
+        uses: c-hive/gha-yarn-cache@v2.1.0
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Run tests
